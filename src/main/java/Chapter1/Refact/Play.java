@@ -3,7 +3,7 @@ package Chapter1.Refact;
 
 public class Play {
   public enum playType{
-    tragedy, comedy
+    tragedy, comedy, no
   }
   public playType getType(String typeName){
     return playType.valueOf(typeName);
@@ -15,6 +15,11 @@ public class Play {
   public Play(String name, String type){
     this.name = name;
     this.setType(type);
+  }
+
+  public Play(String name, playType type){
+    this.name = name;
+    this.type = type;
   }
 
   public String getName() {
@@ -32,4 +37,8 @@ public class Play {
   public void setType(String type) {
     this.type = getType(type);
   }
+
+  public int amountFor(Performance perf){throw new  UnsupportedOperationException(); }
+
+  public int volumeCreditFor(Performance perf){throw new  UnsupportedOperationException();}
 }
